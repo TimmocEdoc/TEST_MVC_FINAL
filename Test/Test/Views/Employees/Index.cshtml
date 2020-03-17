@@ -1,0 +1,45 @@
+﻿@model List<Test.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            EmployeeID
+        </th>
+        <th>
+            EmployeeName
+        </th>
+        <th>
+            EmployeeDepartment
+        </th>
+        <th>
+            EmployeeSalary
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Department)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Salary)
+    </td>
+</tr>
+}
+
+</table>
